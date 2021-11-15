@@ -24,8 +24,10 @@ export default () => {
 
   useEffect(() => {
     const raw = localStorage.getItem("storeUserAgendaData");
-    if (raw !== "") {
+    if (raw) {
       dispatch({ type: "fetchInitialData", payload: JSON.parse(raw) });
+    } else {
+      dispatch({ type: "fetchInitialData", payload: [] });
     }
   }, []);
 
@@ -66,7 +68,6 @@ export default () => {
                   "File is too large, please upload a file with less than 100 rows"
                 );
               } else {
-                console.log(results.meta.fields.length);
                 if (results.meta.fields.length === 8) {
                   const data = results.data.map(value => {
                     return {
@@ -120,7 +121,7 @@ export default () => {
               </CSVLink>
             </div>
             <div>
-              <label class="custom-file-upload btn btn-default border">
+              <label className="custom-file-upload btn btn-default border">
                 <FontAwesomeIcon icon={faUpload} size="1x" className="mr-2" />
                 Import CSV
                 <input
