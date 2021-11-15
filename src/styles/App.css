@@ -45,15 +45,31 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-input[type=text], 
-input[type=date], 
-input[type=tel],
-input[type=email] {
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="datetime-local" i] {
   border: none;
   width: 100%;
   border-bottom: 2px solid #eed442;
 }
 
 input:focus {
-  outline:none;
+  outline: none !important;
+}
+
+.table > :not(:first-child) {
+  border-top: unset !important;
+}
+.btn {
+  height: px !important;
+}
+
+.custom-file-upload {
+  border: 2px solid #ccc;
+  display: inline-block;
+  padding: 2px;
+  cursor: pointer;
+  border-radius: 10px;
 }

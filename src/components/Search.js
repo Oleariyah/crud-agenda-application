@@ -4,9 +4,7 @@ export default ({ handleSearch }) => {
   return (
     <form className="form-inline p-2">
       <div className="input-group">
-        <div className="input-group-prepend">
-          <span className="input-group-text">search</span>
-        </div>
+        <div className="input-group-prepend"></div>
         <input
           type="text"
           className="form-control"

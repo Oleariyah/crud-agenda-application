@@ -4,11 +4,11 @@ export default () => {
   return (
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Country</th>
-        <th>Date of Birth</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Status</th>
         <th>{""}</th>
       </tr>
     </thead>

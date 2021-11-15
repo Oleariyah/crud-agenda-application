@@ -3,18 +3,25 @@ export const appReducer = (state, action) => {
     case "fetchInitialData": {
       return action.payload;
     }
-    case "addNewProfile": {
+    case "addAgenda": {
       return [
         {
           id: Date.now(),
-          name: action.name,
-          email: action.email,
-          phone: action.phone,
-          country: action.country,
-          birthDate: action.birthDate
+          ...action
         },
         ...state
       ];
+    }
+    case "editAgenda": {
+      return state.map(item => {
+        if (item.id === action.id) {
+          return {
+            ...item,
+            title: action.title
+          };
+        }
+        return item;
+      });
     }
     case "removeFromList": {
       return state.filter(item => item.id !== action.id);
